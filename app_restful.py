@@ -41,12 +41,14 @@ class Desenvolvedor(Resource):
         except IndexError:
             mensagem = "Registro do ID {} não existe".format(id)
             response = {"Status": "Erro",
-                        "Mensagem": mensagem}
+                        "Mensagem": mensagem
+                        }
             # desenvolvedor_id = desenvolvedores[id]
         except Exception:
             mensagem = "Erro desconhecido, Procure o admnistrador da API"
             response = {"Status": "Erro",
-                        "Mensagem": mensagem}
+                        "Mensagem": mensagem
+                        }
 
         return response
 
@@ -58,8 +60,8 @@ class Desenvolvedor(Resource):
     def delete(self, id):
         desenvolvedores.pop(id)
         return {"Status": "Sucesso",
-                        "Mensagem": "Registro excluido com sucesso!!"
-                        }
+                "Mensagem": "Registro excluido com sucesso!!"
+                }
 
 
 class Lista_Desenvolvedores(Resource):
